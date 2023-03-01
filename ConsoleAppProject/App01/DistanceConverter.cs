@@ -19,8 +19,11 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void Run()
         {
-
+            InputMiles();
+            CalculateFeet();
+            OutputFeet(); 
         }
+
         /// <summary>
         /// prompt the user to enter the distance in miles
         /// Input the miles as double number
@@ -28,7 +31,9 @@ namespace ConsoleAppProject.App01
 
         private void InputMiles()
         {
-
+            Console.Write("Please enter the number of miles> ");
+            string value = Console.ReadLine();
+            miles = Convert.ToDouble(value);
         }
 
         private void CalculateFeet()
