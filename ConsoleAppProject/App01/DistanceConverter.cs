@@ -6,6 +6,7 @@ namespace ConsoleAppProject.App01
     /// this app will prompt the user to input a distance in feet, miles or metres
     /// and will convert this into the other units
     /// </summary>
+
     /// <author>
     /// kirandeep kaur 0.3
     /// </author>
@@ -39,7 +40,7 @@ namespace ConsoleAppProject.App01
 
             miles = InputDistance("please enter the number of miles");
             CalculateFeet();
-            OutputFeet();
+            OutputDistance(miles, nameof (miles), feet, nameof(feet));
         }
 
         public void FeetToMiles()
@@ -48,7 +49,7 @@ namespace ConsoleAppProject.App01
 
             feet = InputDistance("please enter the number of feet");
             CalculateMiles();
-            OutputMiles();
+            OutputDistance(feet, nameof (feet), miles, nameof(miles));
         }
 
         public void MilesToMetres()
@@ -57,7 +58,7 @@ namespace ConsoleAppProject.App01
 
             miles = InputDistance("please enter the number of miles");
             CalculateMetres();
-            OutputMetres();
+            OutputDistance(miles, nameof (miles), metres, nameof(metres));
         }
         
         
@@ -92,23 +93,15 @@ namespace ConsoleAppProject.App01
             metres = miles * METRES_IN_MILES;
         }
 
-        private void OutputFeet()
+        private void OutputDistance(double fromDistance, 
+          string fromUnit,
+         double toDistance, string toUnit)
         {
-            Console.WriteLine(miles +  "miles is"  + feet +  "feet!");
+            Console.WriteLine($"{fromDistance} {fromUnit}" + $" is {toDistance} {toUnit}!");
 
         }
 
-         private void OutputMiles()
-        {
-            Console.WriteLine(feet+ "feet is" + miles + "miles!");
-
-        }
-
-         private void OutputMetres()
-        {
-            Console.WriteLine(miles + "miles is" + metres + "metres!");
-
-        }
+         
 
         /// <summary>
         /// ourput the discription of application
