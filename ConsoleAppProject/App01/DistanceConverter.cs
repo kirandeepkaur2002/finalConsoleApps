@@ -40,9 +40,9 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        /// this method will input the distance measured in miles
-        /// calculate the same distance in feet
-        /// then output the distance in feet
+        /// this method will input the distance in from unit
+        /// calculate the same distance in to unit
+        /// then output the distance in to unit
         /// </summary>
 
         public void ConvertDistance()
@@ -71,6 +71,23 @@ namespace ConsoleAppProject.App01
             {
                 toDistance = fromDistance / FEET_IN_MILES;
             }
+            else if(fromUnit == MILES && toUnit == METRES)
+            {
+                toDistance = fromDistance * METRES_IN_MILES;
+            }
+            else if(fromUnit == METRES && toUnit == MILES)
+            {
+                toDistance = fromDistance / METRES_IN_MILES;
+            }
+            else if(fromUnit == METRES && toUnit == FEET)
+            {
+                toDistance = fromDistance * FEET_IN_METRES;
+            }
+            else if(fromUnit == FEET && toUnit == METRES)
+            {
+                toDistance = fromDistance / FEET_IN_METRES;
+            }
+            
         }
 
         private string SelectUnit(string prompt)
