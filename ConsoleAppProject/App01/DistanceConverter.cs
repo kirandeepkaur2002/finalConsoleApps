@@ -128,9 +128,6 @@ namespace ConsoleAppProject.App01
             return choice;
         }
 
-        
-        
-        
         /// <summary>
         /// prompt the user to enter the distance in any unit
         /// Input the unit as double number
@@ -150,8 +147,6 @@ namespace ConsoleAppProject.App01
             Console.WriteLine($"\n {fromDistance} {fromUnit}" + $" is {toDistance} {toUnit}!\n ");
 
         }
-
-         
 
         /// <summary>
         /// ourput the discription of application
