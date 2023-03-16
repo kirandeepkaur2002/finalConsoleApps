@@ -1,4 +1,5 @@
 ﻿using ConsoleAppProject.App01;
+using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
 using ConsoleAppProject.Helpers;
 using System;
@@ -13,8 +14,9 @@ namespace ConsoleAppProject
     /// This Project has been modified by:
     /// kirandeep kaur 28/02/2023
     /// </summary>
-    public static class Program
+    public static class Programming
     {
+
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -24,8 +26,19 @@ namespace ConsoleAppProject
             Console.WriteLine("    BNU CO453 Applications Programming 2022-2023! ");
             Console.WriteLine(" =================================================");
             Console.WriteLine();
+
+            BMI bmi = new BMI();
+            calculater.Run();
             DistanceConverter converter = new DistanceConverter();
             converter.Run();
+        }
+
+        private class calculater
+        {
+            internal static void Run()
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
