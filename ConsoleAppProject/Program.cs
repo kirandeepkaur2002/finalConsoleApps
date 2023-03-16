@@ -26,19 +26,12 @@ namespace ConsoleAppProject
             Console.WriteLine("    BNU CO453 Applications Programming 2022-2023! ");
             Console.WriteLine(" =================================================");
             Console.WriteLine();
+            BMI conversion = new BMI();
+            conversion.Run();
 
-            BMI bmi = new BMI();
-            calculater.Run();
-            DistanceConverter converter = new DistanceConverter();
-            converter.Run();
-        }
 
-        private class calculater
-        {
-            internal static void Run()
-            {
-                throw new NotImplementedException();
-            }
+           // DistanceConverter converter = new DistanceConverter();
+           // converter.Run();
         }
     }
 }

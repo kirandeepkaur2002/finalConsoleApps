@@ -16,8 +16,11 @@ namespace ConsoleAppProject.App02
         public void Run()
         {
            BMIcalculater();
+           CalculateBMI();
+           OutputBMI();
         }
 
+        private object app;
         private int Weight ;
         private int Height;
         private int stones;
@@ -27,9 +30,11 @@ namespace ConsoleAppProject.App02
 
         private int Height1;
         private int Weight1;
+        private double CalcBMI;
+        
+    
 
-        public int CalcBMI { get; private set; }
-        public static string cs { get; private set; }
+         public static string cs { get; private set; }
         /// <summarry>
         /// method to prompt the user to enter weight in
         /// stones and pounds and height in
@@ -39,19 +44,51 @@ namespace ConsoleAppProject.App02
         public void BMIcalculater()
         {
             OutputHeading();
+            app = SelectApp($"please select the app> \n");
 
            Weight  = (int)InputWeight($"\n please enter your weight in stones > ");
            Weight1  = (int)InputWeight($"\n please enter your weight in pounds > ");
-           Height   = (int)InputHeight($"\n please enter your height feet > ");
-           Height1 = (int)InputHeight($"\n please enter your height inches > ");
-           
+           Height   = (int)InputHeight($"\n please enter your height in feet > ");
+           Height1 = (int)InputHeight($"\n please enter your height in inches > ");
+
            CalculateBMI();
+
            OutputBMI();
+        }
+
+        private object SelectApp(string prompt)
+        {
+           {
+            string choice = DisplayChoices(prompt);
+            string app = ExecuteChoice(choice);
+            Console.WriteLine($"\n you have chosen {app}");
+            return app;
+        }
         }
 
         private void OutputBMI()
         {
-            Console.WriteLine(" your BMI is ");
+            Console.WriteLine( $"\n your BMI is " + CalcBMI );
+
+            if(CalcBMI>18.5)
+            {
+                Console.WriteLine(" you are underweight , please contact a GP");
+            }
+            else if((CalcBMI <= 18.5) && (CalcBMI >= 24.9))
+            {
+                 Console.WriteLine(" you are in normal range, try to eat a healthy" +
+                                   " deit that is lower in sugar and fat");
+            }
+            else if((CalcBMI<= 25 ) && (CalcBMI >= 29.9))
+            {
+                Console.WriteLine("you are overweight , please give concern to reduce" +
+                                    " your weight for health reason");
+            }
+            else if (CalcBMI<30)
+            {
+                Console.WriteLine(" you have obesity , you should eat a balanced calorie" +
+                                   " controlled diet and should do more exercise");
+            }
         }
 
         private object InputHeight(string prompt)
@@ -68,7 +105,7 @@ namespace ConsoleAppProject.App02
             return Convert.ToInt32(value);
         }
 
-        private void CalculateBMI()
+        public void CalculateBMI()
         {
            CalcBMI = ((Weight * 14 + Weight1) * 703) / ((Height * 12 + Height1) * (Height * 12 + Height1));
         }
