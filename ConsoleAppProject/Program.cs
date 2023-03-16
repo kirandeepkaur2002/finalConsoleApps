@@ -30,8 +30,8 @@ namespace ConsoleAppProject
             conversion.Run();
 
 
-           // DistanceConverter converter = new DistanceConverter();
-           // converter.Run();
+            DistanceConverter converter = new DistanceConverter();
+            converter.Run();
         }
     }
 }
