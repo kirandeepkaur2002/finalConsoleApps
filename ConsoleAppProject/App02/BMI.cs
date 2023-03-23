@@ -56,7 +56,7 @@ namespace ConsoleAppProject.App02
            OutputBMI();
         }
 
-        private object SelectApp(string prompt)
+        private  object SelectApp(string prompt)
         {
            {
             string choice = DisplayChoices(prompt);
