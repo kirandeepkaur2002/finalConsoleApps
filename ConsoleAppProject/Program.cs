@@ -26,12 +26,16 @@ namespace ConsoleAppProject
             Console.WriteLine("    BNU CO453 Applications Programming 2022-2023! ");
             Console.WriteLine(" =================================================");
             Console.WriteLine();
+
+            StudentGrades converter = new StudentGrades();
+            converter.Run();
+
             BMI conversion = new BMI();
             conversion.Run();
 
 
-            DistanceConverter converter = new DistanceConverter();
-            converter.Run();
+            //DistanceConverter converter = new DistanceConverter();
+           // converter.Run();
         }
     }
 }
